@@ -57,7 +57,7 @@ const Start = () => {
         <div className='portfolio-title'>
             <div className='portfolio-main-title'>JAEHEE's PORTFOLIO</div>
             <HiArrowCircleDown className='arrow-icon'  onClick={scrollDown}/>
-            <div className='swipe-btn bounce'>swipe</div>
+            <div className='swipe-text bounce-blink'>swipe</div>
         </div>}
     </div>
 
