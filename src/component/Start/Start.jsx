@@ -32,11 +32,11 @@ const Start = () => {
     // 화살표 아이콘 클릭시 About me 까지 스크롤 내리기
     const scrollDown = ()=>{
         window.scrollTo({
-            top: window.innerHeight * 0.9,
+            top: window.innerHeight * 0.7,
             behavior:"smooth"
         })
     }
-
+    
   return (
     <div className='start-section'>
         <div className={`typed-container ${typingIsFinished? 'shrink':''}`}>

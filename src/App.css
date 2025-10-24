@@ -12,4 +12,6 @@ html,body,#root{
     transition: background-color 1s ease-in-out;
     min-height: 100vh;
     color: black;
+    width: 100%;
+    overflow-x: hidden;
 }
