@@ -5,8 +5,16 @@ import './App.css'
 import Header from './component/Header/Header'
 import Start from './component/Start/Start'
 import About from './component/About/About'
+import Skills from './component/Skills/Skills'
+import Projects from './component/Project/Projects'
 
 function App() {
+  const sections = [
+    { id : 'start', component: <Start/> },
+    { id : 'about', component: <About/> },
+    { id : 'skills', component: <Skills/> },
+    { id : 'project', component: <Projects/> }
+  ]
   const [bgColor, setBgColor] = useState("black");
 
   useEffect(()=>{
@@ -30,6 +38,8 @@ function App() {
       <Header/>
       <Start/>
       <About/>
+      <Skills/>
+      <Projects/>
     </div>
   )
 }
