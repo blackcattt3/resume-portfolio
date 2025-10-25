@@ -22,24 +22,29 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
 
-  const refs = sections.map(()=>useInView({threshold:0.5}));
+  const refs = sections.map(()=>useInView({threshold:0.5}))
   // console.log(refs);
+  // const refs = sections.map(()=>useInView({threshold: 0.5;}))
 
   useEffect(()=>{
-    const index = refs.findIndex(([_, inView])=>inView);
+    // const index = refs.findIndex(([_, inView])=>{return inView==true});
+    const index = refs.findIndex(([_, inView])=>{return inView == true});
     if(index !== -1){
       setActiveIndex(index);
     }
-    // console.log('activeIndex', activeIndex)
-  },[...refs.map(([_, inView])=>inView)])
+    console.log('activeIndex', activeIndex)
+  }, [...refs.map(([_, inView])=>inView), activeIndex])
 
+  // [...refs.map((item)=>item.inView),
+  // refs.map(([_, inView])=>inView)
+  
   useEffect(()=>{
     if(activeIndex % 2 == 0){
       setBgColor('black');
-      setTextColor('white')
+      // setTextColor('white')
     } else{
       setBgColor('white')
-      setTextColor('black')
+      // setTextColor('black')
     }
   },[activeIndex])
 
@@ -48,6 +53,7 @@ function App() {
       <Header/>
       {sections.map((section, i)=>{
         const [ref] = refs[i];
+        // 구조분해 할당
         return (
           <div ref={ref} key={section.id}>{section.component}</div>
         )
@@ -61,3 +67,6 @@ export default App
 // 컴포넌트마다 각기 다른 아이디의 ref를 심는다,
 // ref % 2 == 0 : setBgColor('black')
 //  ref % 2 !== 0 : setBgColor('white')
+
+// Framer Motion
+// threshold, rootMargin

@@ -7,6 +7,10 @@ import { FaGraduationCap } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoGithub } from "react-icons/io";
 import { SiVelog } from "react-icons/si";
+import { TbCertificate } from "react-icons/tb";
+import { MdLanguage } from "react-icons/md";
+
+
 
 
 const About = () => {
@@ -18,15 +22,21 @@ const About = () => {
             link : false
         },
         {
-            icons : <FaBirthdayCake />,
-            title : '생년월일',
-            content : '1999.12.29',
-            link : false
-        },
-        {
             icons : <FaGraduationCap />,
             title : '학력',
             content : '건국대학교 화학공학부 학사',
+            link : false
+        },
+        {
+            icons : <TbCertificate />,
+            title : '자격증',
+            content : '정보처리기사 · ADsP',
+            link : false
+        },
+        {
+            icons : <MdLanguage />,
+            title : '어학',
+            content : 'OPIc IH',
             link : false
         },
         {
@@ -48,6 +58,7 @@ const About = () => {
             link : true
         }
     ]
+    
   return (
     <div className='about-section'>
       <h1>About me</h1>
