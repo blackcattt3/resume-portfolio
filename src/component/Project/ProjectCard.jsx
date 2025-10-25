@@ -2,12 +2,11 @@ import React from 'react'
 import './ProjectCard.css'
 import { useInView } from 'react-intersection-observer'
 
-const ProjectCard = ({props}) => {
-  const [ref, inView] = useInView()
-
+const ProjectCard = ({item}) => {
+  const { title, subtitle, content } = item
   return (
-    <div ref={ref} className='project-card'>
-      <h1>{props} 카드</h1>
+    <div className='project-card'>
+      <h1>{title}</h1>
     </div>
   )
 }

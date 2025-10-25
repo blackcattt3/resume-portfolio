@@ -22,7 +22,7 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
 
 
-  const refs = sections.map(()=>useInView({threshold:0.5}))
+  const refs = sections.map(()=>useInView({threshold:0.3}))
   // console.log(refs);
   // const refs = sections.map(()=>useInView({threshold: 0.5;}))
 
