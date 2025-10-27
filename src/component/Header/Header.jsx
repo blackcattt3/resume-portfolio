@@ -8,7 +8,7 @@ const Header = ({scrollRefs}) => {
 
     const goToMenu = (ref)=>{
         // const [ref] = refs[i];
-        console.log(ref.current);
+        // console.log(ref.current);
         ref.current?.scrollIntoView({behavior:'smooth'})
     }
 

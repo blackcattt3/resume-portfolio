@@ -1,22 +1,24 @@
 import React from 'react'
 import './Projects.css'
 import ProjectCard from './ProjectCard'
+import ProjectModal from './ProjectModal'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react';
+
 
 
 const Projects = () => {
 
-  const jnailImgs = import.meta.glob('./img/JnailHTML/*.{png,jpg,jpeg,svg}', { eager: true })
-  const weatherImgs = import.meta.glob('./img/WeatherApp/*.{png,jpg,jpeg,svg}', { eager: true })
-  const jnail2Imgs = import.meta.glob('./img/JnailREACT/*.{png,jpg,jpeg,svg}', { eager: true })
-  const rspImgs = import.meta.glob('./img/RSPGame/*.{png,jpg,jpeg,svg}', { eager: true })
+  const jnailImgs = import.meta.glob('../../assets/img/JnailHTML/*.{png,jpg,jpeg,svg}', { eager: true })
+  const weatherImgs = import.meta.glob('../../assets/img/WeatherApp/*.{png,jpg,jpeg,svg}', { eager: true })
+  const jnail2Imgs = import.meta.glob('../../assets/img/JnailREACT/*.{png,jpg,jpeg,svg}', { eager: true })
+  const rspImgs = import.meta.glob('../../assets/img/RSPGame/*.{png,jpg,jpeg,svg}', { eager: true })
 
   const jnailImages = Object.values(jnailImgs).map((img) => img.default);
   const weatherImages = Object.values(weatherImgs).map((img) => img.default);
   const jnail2Images = Object.values(jnail2Imgs).map((img) => img.default);
   const rspImages = Object.values(rspImgs).map((img) => img.default);
 
-  // console.log(rspImages)
 
   const projectList = [
     {
@@ -75,23 +77,38 @@ const Projects = () => {
     //   ]
     // }
   ]
+
+  const [activeProject, setActiveProject] = useState(null);
+
   return (
-    <div className='projects-section'>
-      <h1>projects</h1>
-      {/* <motion.div className='text-box'
-        initial={{ opacity: 0, scale: 0.5 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{
-    duration: 0.8,
-    delay: 0.5,
-    ease: [0, 0.71, 0.2, 1.01]
-  }}
-      >테스트</motion.div> */}
-      {projectList.map((item,i)=>(
-        <ProjectCard item={item} index={i} delayBase={0.15} duration={0.6}/>
-      ))}
+    <div>
+      <div className='projects-section'>
+        <h1>projects</h1>
+        {/* <motion.div className='text-box'
+          initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{
+      duration: 0.8,
+      delay: 0.5,
+      ease: [0, 0.71, 0.2, 1.01]
+    }}
+        >테스트</motion.div> */}
+        {projectList.map((item,i)=>(
+          <ProjectCard item={item} index={i} delayBase={0.15} duration={0.6}
+          onDetailClick={()=>setActiveProject(item)} activeProject={activeProject}/>
+        ))}
+      </div>
+
+      { activeProject &&
+        <ProjectModal activeProject={activeProject} setActiveProject={setActiveProject}/>
+      }
     </div>
+    
   )
 }
 
 export default Projects
+
+
+// 모달바 구현시 onDetailClick={()=>setActiveProject(item)} 주의! 어떤 아이템인지 아예 props로 넘겨줘야한다.
+// 안그럼 어떤 정보를 띄워야하는지 알수가 없다.

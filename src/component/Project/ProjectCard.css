@@ -13,7 +13,7 @@
 }
 .project-card{
     width: 100%;
-    min-height: 100%;
+    min-height: 100%;       /* 내용 길이 맞춰서 늘어나게 */
     gap: 20px;
 
     display: flex;
@@ -59,13 +59,24 @@
     gap: 10px;
 }
 .button div{
-    /* border: 1px solid black; */
     padding: 5px 10px;
     border-radius: 20px;
     background-color: rgb(245, 228, 220) ;
-    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    /* text-align: center; */
 }
-
-/* HTML5”는 #e34c26, “CSS3”는 #2965f1, “Bootstrap”은 #7952b3 */
+.button div:hover{
+    background-color: rgb(229, 202, 181);
+    cursor: pointer;
+}
+.bottom-area{
+    display: flex;
+    justify-content: space-between;
+}
+.detail-btn{
+    padding-top: 8px;
+    font-size: 18px;
+}
+.detail-btn:hover{
+    cursor: pointer;
+    color: #8b8a8a;
+}

@@ -2,12 +2,17 @@ import React from 'react'
 import './ProjectCard.css'
 import { useInView } from 'react-intersection-observer'
 import { FaTools } from "react-icons/fa";
+import { useState, useEffect } from 'react';
 
-const ProjectCard = ({item, i, delayBase, duration}) => {
+const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject}) => {
   const { title, subtitle, content, skills, projectImg, github, demo } = item
-  // console.log('skills',skills)
-  // console.log(github)
+  
+  // useEffect(()=>{
+  //   console.log(activeProject)
+  // },[activeProject])
+
   return (
+
     <div className='card-wrapper'>
       <div className='project-card'>
         <div className='content'>
@@ -18,9 +23,13 @@ const ProjectCard = ({item, i, delayBase, duration}) => {
               <div>{skill}</div>
             ))}</h4>
           </div>
-          <div className='button'>
-            <div onClick={() => window.open(demo)}>Demo</div>
-            <div onClick={() => window.open(github)}>Git Repo</div>
+          {/* <div>+ more Details</div> */}
+          <div className='bottom-area'>
+            <div className='button'>
+              <div onClick={() => window.open(demo)}>Demo</div>
+              <div onClick={() => window.open(github)}>Git Repo</div>
+            </div>
+            <div className='detail-btn' onClick={onDetailClick}>+ more Details</div>
           </div>
         </div>
         <div className='img-part'>
@@ -28,7 +37,7 @@ const ProjectCard = ({item, i, delayBase, duration}) => {
         </div>
       </div>
     </div>
-    
+
   )
 }
 
