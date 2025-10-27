@@ -25,13 +25,15 @@ const Skills = () => {
       <h1>skills</h1>
 
     {skillList.map((item, index)=>(
-      <div className='skill-card'>
-        <div className={`skill-title ${index%2==0?"":"oddNum"}`}>{item.title}</div>
-        <div className={`skill-content ${index%2==0?"":"oddNum"}`}>
-          <div>📚 {item?.content}</div>
-          <div className='content-summary'>💭 {item?.contentSummary}</div>
-        </div>
-      </div>
+
+            <div className='skill-card'>
+                <div className={`skill-title ${index%2==0?"":"oddNum"}`}>{item.title}</div>
+                <div className={`skill-content ${index%2==0?"":"oddNum"}`}>
+                    <div>📚 {item?.content}</div>
+                    <div className='content-summary'>💭 {item?.contentSummary}</div>
+                </div>
+            </div>
+
     ))}
       
     </div>

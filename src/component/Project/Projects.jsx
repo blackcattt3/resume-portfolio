@@ -1,42 +1,66 @@
 import React from 'react'
 import './Projects.css'
 import ProjectCard from './ProjectCard'
+import { motion } from 'framer-motion'
+
 
 const Projects = () => {
+
+  const jnailImgs = import.meta.glob('./img/JnailHTML/*.{png,jpg,jpeg,svg}', { eager: true })
+  const weatherImgs = import.meta.glob('./img/WeatherApp/*.{png,jpg,jpeg,svg}', { eager: true })
+  const jnail2Imgs = import.meta.glob('./img/JnailREACT/*.{png,jpg,jpeg,svg}', { eager: true })
+  const rspImgs = import.meta.glob('./img/RSPGame/*.{png,jpg,jpeg,svg}', { eager: true })
+
+  const jnailImages = Object.values(jnailImgs).map((img) => img.default);
+  const weatherImages = Object.values(weatherImgs).map((img) => img.default);
+  const jnail2Images = Object.values(jnail2Imgs).map((img) => img.default);
+  const rspImages = Object.values(rspImgs).map((img) => img.default);
+
+  // console.log(rspImages)
+
   const projectList = [
     {
       title : 'J.nail website (HTML ver.)',
-      subtitle : '직접 브랜드를 커스텀하여 직접 운영 해보고싶은 나만의 네일 브랜드 쇼핑몰 웹사이트를 구현하였습니다',
+      subtitle : '직접 커스텀한 브랜드를 이용한 나만의 네일 브랜드 쇼핑몰 웹사이트',
       skills : ['HTML5', 'CSS3', 'Bootstrap'],
       content : [
         'HTML, CSS 기반의 반응형 쇼핑몰 페이지',
         '부트스트랩을 이용한 반응형 웹페이지',
         '브랜드 콘셉트(J.nail)의 시각적 아이덴티티를 강조한 UI/UX 디자인',
         '기초 웹 구조를 익히며 웹 프론트엔드의 기초를 다짐'
-      ]
+      ],
+      demo : 'https://jnail.netlify.app/',
+      github : 'https://github.com/blackcattt3/J.nail-website',
+      projectImg :jnailImages,
     },
     {
       title : 'My Weather app',
       subtitle : 'OpenWeather API를 활용한 React 기반 실시간 날씨 앱',
-      skills: ["React", "JavaScript (ES6+)", "API"],
+      skills: ["React", "JavaScript(ES6+)", "API"],
       content : [
         "OpenWeather API를 이용해 도시별 실시간 날씨 데이터 요청 및 표시",
         "useState, useEffect 훅을 활용한 비동기 데이터 렌더링",
         "날씨 상태(맑음, 흐림, 비 등)에 따라 배경 이미지와 테마 동적으로 변경",
         "react-spinners 라이브러리를 이용한 로딩스피너 구현",
         "배포 시 환경변수(.env) 관리 및 Netlify 환경변수 설정을 통해 API Key 보안 처리"
-      ]
+      ],
+      demo : 'https://mini-weathers.netlify.app/',
+      github : 'https://github.com/blackcattt3/weather_app_project',
+      projectImg :weatherImages
     },
     {
       title : '가위 바위 보!',
       subtitle : 'React 훅 기반 가위바위보 게임',
-      skills: ["React.js", "useState", "useEffect", "CSS3"],
+      skills: ["React", "useState", "useEffect", "CSS3"],
       content : [
         "useState, useEffect를 활용해 유저와 컴퓨터의 선택 상태 관리",
         "조건문과 랜덤 함수를 이용한 게임 로직 구현",
         "점수판, 결과 메세지, 리셋 버튼 등 인터랙티브 UI 구성",
         "게임 로직 설계 과정을 통해 React 상태관리의 이해 심화"
-      ]
+      ],
+      demo : 'https://my-rsp-game.netlify.app/',
+      github : 'https://github.com/blackcattt3/rock-scissors-paper-game',
+      projectImg : rspImages
     },
     // {
     //   title : 'J.nail Website (React ver.)',
@@ -54,8 +78,17 @@ const Projects = () => {
   return (
     <div className='projects-section'>
       <h1>projects</h1>
-      {projectList.map((item)=>(
-        <ProjectCard item={item}/>
+      {/* <motion.div className='text-box'
+        initial={{ opacity: 0, scale: 0.5 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{
+    duration: 0.8,
+    delay: 0.5,
+    ease: [0, 0.71, 0.2, 1.01]
+  }}
+      >테스트</motion.div> */}
+      {projectList.map((item,i)=>(
+        <ProjectCard item={item} index={i} delayBase={0.15} duration={0.6}/>
       ))}
     </div>
   )

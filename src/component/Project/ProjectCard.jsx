@@ -1,14 +1,40 @@
 import React from 'react'
 import './ProjectCard.css'
 import { useInView } from 'react-intersection-observer'
+import { FaTools } from "react-icons/fa";
 
-const ProjectCard = ({item}) => {
-  const { title, subtitle, content } = item
+const ProjectCard = ({item, i, delayBase, duration}) => {
+  const { title, subtitle, content, skills, projectImg, github, demo } = item
+  // console.log('skills',skills)
+  // console.log(github)
   return (
-    <div className='project-card'>
-      <h1>{title}</h1>
+    <div className='card-wrapper'>
+      <div className='project-card'>
+        <div className='content'>
+          <div className='title-part'>
+            <h2>{title}</h2>
+            <h4 className='subtitle'>{subtitle}</h4>
+            <h4 className='skill-part'><FaTools />{skills.map((skill)=>(
+              <div>{skill}</div>
+            ))}</h4>
+          </div>
+          <div className='button'>
+            <div onClick={() => window.open(demo)}>Demo</div>
+            <div onClick={() => window.open(github)}>Git Repo</div>
+          </div>
+        </div>
+        <div className='img-part'>
+          <img className='card-img' src={projectImg.find(img=>img.includes('thumbnail')) || projectImg[0]}/>
+        </div>
+      </div>
     </div>
+    
   )
 }
 
 export default ProjectCard
+
+
+// 원래는 animista로 애니메이션 효과 주려고 했지만 이렇게 되면 화면에 보일때 실행할수가 없게 됌. 렌더링 즉시 실행되어버려서
+// 타이밍까지 제어하려면 추가로 react-intersection-observer로 따로 타이밍 제어까지 해줘야함.
+// 그래서 그냥 framers motion으로 한번에 제어해주기로 했다!
