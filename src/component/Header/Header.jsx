@@ -16,7 +16,8 @@ const Header = ({scrollRefs}) => {
     <div>
         <div className='header-menu'>
             {menu.map((item, i)=>{
-                return (<div key={i} onClick={()=>goToMenu(scrollRefs[i])}>{item}</div>)
+                return (<div key={i}
+                    onClick={()=>goToMenu(scrollRefs[i])}>{item}</div>)
             })}
             {/* <div>Start</div>
             <div>|</div>

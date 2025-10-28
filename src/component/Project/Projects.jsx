@@ -97,6 +97,7 @@ const Projects = () => {
           <ProjectCard item={item} index={i} delayBase={0.15} duration={0.6}
           onDetailClick={()=>setActiveProject(item)} activeProject={activeProject}/>
         ))}
+
       </div>
 
       { activeProject &&

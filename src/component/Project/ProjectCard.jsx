@@ -3,6 +3,7 @@ import './ProjectCard.css'
 import { useInView } from 'react-intersection-observer'
 import { FaTools } from "react-icons/fa";
 import { useState, useEffect } from 'react';
+import { CiCirclePlus } from "react-icons/ci";
 
 const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject}) => {
   const { title, subtitle, content, skills, projectImg, github, demo } = item
@@ -11,31 +12,36 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
   //   console.log(activeProject)
   // },[activeProject])
 
+
   return (
 
     <div className='card-wrapper'>
-      <div className='project-card'>
-        <div className='content'>
-          <div className='title-part'>
-            <h2>{title}</h2>
-            <h4 className='subtitle'>{subtitle}</h4>
-            <h4 className='skill-part'><FaTools />{skills.map((skill)=>(
-              <div>{skill}</div>
-            ))}</h4>
-          </div>
-          {/* <div>+ more Details</div> */}
-          <div className='bottom-area'>
-            <div className='button'>
-              <div onClick={() => window.open(demo)}>Demo</div>
-              <div onClick={() => window.open(github)}>Git Repo</div>
+
+        <div className='project-card'>
+          <div className='content'>
+
+            <div className='title-part'>
+              <h2>{title}</h2>
+              <h4 className='subtitle'>{subtitle}</h4>
+              <h5 className='skill-part'><FaTools />{skills.map((skill)=>(
+                <div>{skill}</div>
+              ))}</h5>
             </div>
-            <div className='detail-btn' onClick={onDetailClick}>+ more Details</div>
+
+              <div className='button-area'>
+                <div className='demo-btn' onClick={() => window.open(demo)}>Demo</div>
+                <div className='git-btn' onClick={() => window.open(github)}>Git Repo</div>
+              </div>
+
+          </div>
+
+          <div className='img-part' onClick={onDetailClick}>
+            <img className='card-img' src={projectImg.find(img=>img.includes('thumbnail')) || projectImg[0]}/>
           </div>
         </div>
-        <div className='img-part'>
-          <img className='card-img' src={projectImg.find(img=>img.includes('thumbnail')) || projectImg[0]}/>
-        </div>
-      </div>
+
+        <div className='detail-btn'><CiCirclePlus /> more Details</div>
+  
     </div>
 
   )

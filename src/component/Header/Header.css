@@ -10,3 +10,8 @@
     color: black !important;
     z-index: 10;
 }
+.header-menu div:hover{
+    cursor: pointer;
+    color: #8b8a8a;
+    transform: scale(1.1);
+}
