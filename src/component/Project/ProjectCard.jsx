@@ -4,10 +4,11 @@ import { useInView } from 'react-intersection-observer'
 import { FaTools } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { CiCirclePlus } from "react-icons/ci";
+import { CiCircleMinus } from "react-icons/ci";
 
 const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject}) => {
   const { title, subtitle, content, skills, projectImg, github, demo } = item
-  
+  const [detailOpen, setDetailOpen] = useState(false);
   // useEffect(()=>{
   //   console.log(activeProject)
   // },[activeProject])
@@ -28,11 +29,17 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
               ))}</h5>
             </div>
 
-              <div className='button-area'>
-                <div className='demo-btn' onClick={() => window.open(demo)}>Demo</div>
-                <div className='git-btn' onClick={() => window.open(github)}>Git Repo</div>
-              </div>
+            <div className='button-area'>
+              <div className='demo-btn' onClick={() => window.open(demo)}>Demo</div>
+              <div className='git-btn' onClick={() => window.open(github)}>Git Repo</div>
+            </div>
 
+            {detailOpen && <ul className='detail-area'>
+              {content.map((el)=>(
+                <li>⭐️  {el}</li>
+              ))}
+            </ul>}
+      
           </div>
 
           <div className='img-part' onClick={onDetailClick}>
@@ -40,7 +47,8 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
           </div>
         </div>
 
-        <div className='detail-btn'><CiCirclePlus /> more Details</div>
+        <div className='detail-btn' onClick={()=>setDetailOpen(!detailOpen)}>
+          {detailOpen?<><CiCirclePlus/>Close Details</>:<><CiCircleMinus />More Details</>}</div>
   
     </div>
 

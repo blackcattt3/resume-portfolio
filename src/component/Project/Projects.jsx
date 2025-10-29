@@ -101,7 +101,9 @@ const Projects = () => {
       </div>
 
       { activeProject &&
-        <ProjectModal activeProject={activeProject} setActiveProject={setActiveProject}/>
+        <ProjectModal activeProject={activeProject}
+        setActiveProject={setActiveProject}
+        onClose={()=>setActiveProject(null)}/>
       }
     </div>
     
