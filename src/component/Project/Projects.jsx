@@ -22,7 +22,7 @@ const Projects = () => {
   const rspImages = Object.values(rspImgs).map((img) => img.default);
   const portfolioImages = Object.values(portfolioImgs).map((img) => img.default);
 
-
+  
   const projectList = [
     {
       title : 'J.nail website (HTML ver.)',
@@ -79,7 +79,7 @@ const Projects = () => {
         "컴포넌트 단위 UI 설계 경험 및 재사용 가능한 카드 컴포넌트 구현",
         "Transform-origin을 활용해 자연스러운 애니메이션 효과 구현"
       ],
-      demo : 'https://my-rsp-game.netlify.app/',
+      demo : 'https://jaehee-portfolio.vercel.app/',
       github : 'https://github.com/blackcattt3/resume-portfolio',
       projectImg : portfolioImages
     },
