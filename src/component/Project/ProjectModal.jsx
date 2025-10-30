@@ -1,26 +1,41 @@
 import React from 'react'
 import './ProjectModal.css'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
+import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
+
 
 const ProjectModal = ({activeProject, setActiveProject, onClose}) => {
     // console.log(activeProject)
     const { title, subtitle, content, skills, projectImg, github, demo } = activeProject;
 
-
+    const [currentImg, setCurrentImg] = useState(0);
+    useEffect(()=>{
+        console.log(currentImg);
+    },[currentImg])
     return (
     <div className='overlay' onClick={onClose}>
-        <h2 onClick={onClose}>x</h2>
-        <div className='modal' onClick={(e)=>{e.stopPropagation()}}>
-            <h1>{title}</h1>
+        {/* <h2 onClick={onClose}>x</h2> */}
+        < div className='modal' onClick={(e)=>{e.stopPropagation()}}>
+            {/* <h1>{title}</h1>
             <h3>{subtitle}</h3>
             {content.map((el)=>(
                 <div>{el}</div>
             ))}
             <h2>{title}</h2>
-            <h2>{title}</h2>
-            {projectImg.map((img)=>(
-                <img className='modal-project-img'src={img}/>
-            ))}
+            <h2>{title}</h2> */}
+            <div className='modal-top'>
+                <IoIosArrowDropleftCircle className='modal-icon' onClick={()=>{currentImg>0? setCurrentImg(prev => prev-1):setCurrentImg(projectImg.length-1)}}/>
+                <img className='modal-main-img' src={projectImg[currentImg]}/>
+                <IoIosArrowDroprightCircle className='modal-icon' onClick={()=>{currentImg<projectImg.length-1? setCurrentImg(prev => prev+1):setCurrentImg(0)}}/>
+            </div>
+            <div className='modal-img-list'>
+                {projectImg.map((img, i)=>(
+                <img className={`modal-project-img ${i==currentImg?'current' : ''}`} src={img}
+                    onClick={()=>setCurrentImg(i)}/>
+                ))}
+            </div>
+            
         </div>
     </div>
   )

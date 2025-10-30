@@ -13,11 +13,14 @@ const Projects = () => {
   const weatherImgs = import.meta.glob('../../assets/img/WeatherApp/*.{png,jpg,jpeg,svg}', { eager: true })
   const jnail2Imgs = import.meta.glob('../../assets/img/JnailREACT/*.{png,jpg,jpeg,svg}', { eager: true })
   const rspImgs = import.meta.glob('../../assets/img/RSPGame/*.{png,jpg,jpeg,svg}', { eager: true })
+  const portfolioImgs = import.meta.glob('../../assets/img/Portfolio/*.{png,jpg,jpeg,svg}', { eager: true })
+
 
   const jnailImages = Object.values(jnailImgs).map((img) => img.default);
   const weatherImages = Object.values(weatherImgs).map((img) => img.default);
   const jnail2Images = Object.values(jnail2Imgs).map((img) => img.default);
   const rspImages = Object.values(rspImgs).map((img) => img.default);
+  const portfolioImages = Object.values(portfolioImgs).map((img) => img.default);
 
 
   const projectList = [
@@ -63,6 +66,22 @@ const Projects = () => {
       demo : 'https://my-rsp-game.netlify.app/',
       github : 'https://github.com/blackcattt3/rock-scissors-paper-game',
       projectImg : rspImages
+    },
+    {
+      title : "Jaehee's portfolio" ,
+      subtitle : 'React 기반 나의 이력서 포트폴리오',
+      skills: ["React", "useState", "useEffect", "CSS3"],
+      content : [
+        "프로젝트 목록을 카드 형태로 구성하고 map을 활용한 동적 렌더링",
+        "'More Details' 토글 버튼으로 상세 설명 펼치기/접기 기능 구현",
+        "이미지 클릭 시 모달 오픈 및 프로젝트 이미지 슬라이더 구현",
+        "모달 외부 클릭 시 닫기 기능 — 이벤트 버블링 제어(stopPropagation)",
+        "컴포넌트 단위 UI 설계 경험 및 재사용 가능한 카드 컴포넌트 구현",
+        "Transform-origin을 활용해 자연스러운 애니메이션 효과 구현"
+      ],
+      demo : 'https://my-rsp-game.netlify.app/',
+      github : 'https://github.com/blackcattt3/resume-portfolio',
+      projectImg : portfolioImages
     },
     // {
     //   title : 'J.nail Website (React ver.)',
