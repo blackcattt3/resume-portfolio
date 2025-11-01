@@ -15,12 +15,12 @@ const container = {
     opacity: 1,
     transition:{
       staggerChildren : 0.2,
-      delayChildren : 0.1
+      delayChildren : 0.7
     }
   }
 };
 
-const item = {
+const text = {
   hidden: {opacity:0, y:50},
   visible : {opacity:1, y:0}
 };
@@ -73,18 +73,30 @@ const About = () => {
 
   return (
     <div className='about-section'>
-      <h1>About me</h1>
-      <div className='info'>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+      >About me</motion.h1>
+      <motion.div className='info'
+        variants={container}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{once:false, amount:0.3}}
+      >
         {infoList.map((item, i)=>(
-            <div key={i} className='info-item'>
+            <motion.div key={i} className='info-item'
+              variants={text}
+            >
                 <div>{item.icons}</div>
                 <div>
                     <h5>{item.title}</h5>
                     {item.link?<a className='link-style' href={item.content}>{item.content}</a>:<h3>{item.content}</h3>}
                 </div>
-            </div>
+            </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }

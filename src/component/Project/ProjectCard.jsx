@@ -5,6 +5,8 @@ import { FaTools } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import { text } from '../../animations/animationVariants';
+import {motion} from 'framer-motion'
 
 const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject}) => {
   const { title, subtitle, content, skills, projectImg, github, demo } = item
@@ -16,7 +18,7 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
 
   return (
 
-    <div className='card-wrapper'>
+    <motion.div className='card-wrapper' variants={text}>
 
         <div className='project-card'>
           <div className='content'>
@@ -50,7 +52,7 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
         <div className='detail-btn' onClick={()=>setDetailOpen(!detailOpen)}>
           {detailOpen?<><CiCirclePlus/>Close Details</>:<><CiCircleMinus />More Details</>}</div>
   
-    </div>
+    </motion.div>
 
   )
 }

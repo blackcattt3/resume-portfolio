@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard'
 import ProjectModal from './ProjectModal'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react';
-
+import { container, text } from '../../animations/animationVariants'
 
 
 const Projects = () => {
@@ -22,7 +22,7 @@ const Projects = () => {
   const rspImages = Object.values(rspImgs).map((img) => img.default);
   const portfolioImages = Object.values(portfolioImgs).map((img) => img.default);
 
-  
+
   const projectList = [
     {
       title : 'J.nail website (HTML ver.)',
@@ -102,20 +102,28 @@ const Projects = () => {
   return (
     <div>
       <div className='projects-section'>
-        <h1>projects</h1>
-        {/* <motion.div className='text-box'
-          initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{
-      duration: 0.8,
-      delay: 0.5,
-      ease: [0, 0.71, 0.2, 1.01]
-    }}
-        >테스트</motion.div> */}
-        {projectList.map((item,i)=>(
-          <ProjectCard item={item} index={i} delayBase={0.15} duration={0.6}
-          onDetailClick={()=>setActiveProject(item)} activeProject={activeProject}/>
-        ))}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.5 }}
+        >projects</motion.h1>
+        
+        <motion.div
+          variants={container}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {projectList.map((item,i)=>(
+            <ProjectCard item={item} index={i}
+            onDetailClick={()=>setActiveProject(item)} activeProject={activeProject}/>
+          ))}
+
+        </motion.div>
+        
+
+        
 
       </div>
 

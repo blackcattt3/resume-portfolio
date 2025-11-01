@@ -1,5 +1,7 @@
 import React from 'react'
 import './Skills.css'
+import { motion } from 'framer-motion'
+import { container, text } from '../../animations/animationVariants'
 
 const Skills = () => {
   const skillList = [
@@ -22,19 +24,34 @@ const Skills = () => {
     ]
   return (
     <div className='skill-section'>
-      <h1>skills</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+      >skills</motion.h1>
 
-    {skillList.map((item, index)=>(
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView='visible'
+        viewport={{once:false, amount:0.25}}
+      >
+         {skillList.map((item, index)=>(
 
-            <div className='skill-card'>
+            <motion.div className='skill-card'
+              variants={text}
+            >
                 <div className={`skill-title ${index%2==0?"":"oddNum"}`}>{item.title}</div>
                 <div className={`skill-content ${index%2==0?"":"oddNum"}`}>
                     <div>📚 {item?.content}</div>
                     <div className='content-summary'>💭 {item?.contentSummary}</div>
                 </div>
-            </div>
+            </motion.div>
 
-    ))}
+          ))}
+      </motion.div>
+   
       
     </div>
   )
