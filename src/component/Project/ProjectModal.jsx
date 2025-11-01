@@ -8,15 +8,12 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 const ProjectModal = ({activeProject, setActiveProject, onClose}) => {
     // console.log(activeProject)
     const { title, subtitle, content, skills, projectImg, github, demo } = activeProject;
-
     const [currentImg, setCurrentImg] = useState(0);
-    useEffect(()=>{
-        console.log(currentImg);
-    },[currentImg])
+
     return (
     <div className='overlay' onClick={onClose}>
         {/* <h2 onClick={onClose}>x</h2> */}
-        < div className='modal' onClick={(e)=>{e.stopPropagation()}}>
+        < div className='modal' onClick={(e)=>e.stopPropagation()}>
             {/* <h1>{title}</h1>
             <h3>{subtitle}</h3>
             {content.map((el)=>(
