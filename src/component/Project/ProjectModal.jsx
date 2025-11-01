@@ -12,15 +12,7 @@ const ProjectModal = ({activeProject, setActiveProject, onClose}) => {
 
     return (
     <div className='overlay' onClick={onClose}>
-        {/* <h2 onClick={onClose}>x</h2> */}
         < div className='modal' onClick={(e)=>e.stopPropagation()}>
-            {/* <h1>{title}</h1>
-            <h3>{subtitle}</h3>
-            {content.map((el)=>(
-                <div>{el}</div>
-            ))}
-            <h2>{title}</h2>
-            <h2>{title}</h2> */}
             <div className='modal-top'>
                 <IoIosArrowDropleftCircle className='modal-icon' onClick={()=>{currentImg>0? setCurrentImg(prev => prev-1):setCurrentImg(projectImg.length-1)}}/>
                 <img className='modal-main-img' src={projectImg[currentImg]}/>

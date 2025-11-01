@@ -1,17 +1,29 @@
 import React from 'react'
 import './About.css'
-import ProjectCard from '../Project/ProjectCard'
 import { FaUser } from "react-icons/fa";
-import { FaBirthdayCake } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoLogoGithub } from "react-icons/io";
 import { SiVelog } from "react-icons/si";
 import { TbCertificate } from "react-icons/tb";
 import { MdLanguage } from "react-icons/md";
+import { motion } from 'framer-motion';
 
+const container = {
+  hidden : {opacity: 0},
+  visible : {
+    opacity: 1,
+    transition:{
+      staggerChildren : 0.2,
+      delayChildren : 0.1
+    }
+  }
+};
 
-
+const item = {
+  hidden: {opacity:0, y:50},
+  visible : {opacity:1, y:0}
+};
 
 const About = () => {
     const infoList = [
@@ -58,7 +70,7 @@ const About = () => {
             link : true
         }
     ]
-    
+
   return (
     <div className='about-section'>
       <h1>About me</h1>
