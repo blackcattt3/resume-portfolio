@@ -11,12 +11,16 @@
 }
 .project-card{
     width: 100%;
-    min-height: 100%;       /* 내용 길이 맞춰서 늘어나게 */
+    /* min-height: 100%;        */
+    /* 내용 길이 맞춰서 늘어나게 */
     gap: 20px;
 
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    /* align-items: stretch; */
+    align-items: flex-start;
+    
+
     
 }
 .content{
@@ -25,9 +29,11 @@
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    /* max-width: 190px; */
+    /* flex-wrap: wrap; */
 }
 .img-part{
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     align-items: center;
 }
@@ -59,6 +65,7 @@
     font-weight: 500;
     font-size: 16px;
     margin-bottom: 7px;
+    flex-wrap: wrap;
 }
 .button-area{
     display: flex;

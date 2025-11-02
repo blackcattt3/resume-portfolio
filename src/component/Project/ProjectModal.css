@@ -26,6 +26,10 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    position: relative;
+}
+.close-icon{
+  display: none;
 }
 .modal-top{
   width: 100%;
@@ -54,4 +58,25 @@
 }
 .modal-project-img.current{
   filter: brightness(0.3);
+  transform: scale(1.08);
+}
+
+@media (max-width: 480px){
+  .modal{
+    width: 400px;
+  }
+  .modal-main-img{
+    height: 400px;
+  }
+  .modal-icon{
+    display: none;
+  }
+  .close-icon{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    color: rgb(54, 53, 53)
+  }
 }

@@ -3,6 +3,7 @@ import './ProjectModal.css'
 import { useEffect, useState } from 'react'
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 
 const ProjectModal = ({activeProject, setActiveProject, onClose}) => {
@@ -13,6 +14,7 @@ const ProjectModal = ({activeProject, setActiveProject, onClose}) => {
     return (
     <div className='overlay' onClick={onClose}>
         < div className='modal' onClick={(e)=>e.stopPropagation()}>
+            <IoCloseCircleSharp className='close-icon'onClick={onClose}/>
             <div className='modal-top'>
                 <IoIosArrowDropleftCircle className='modal-icon' onClick={()=>{currentImg>0? setCurrentImg(prev => prev-1):setCurrentImg(projectImg.length-1)}}/>
                 <img className='modal-main-img' src={projectImg[currentImg]}/>
