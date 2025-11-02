@@ -57,7 +57,7 @@ function App() {
             viewRef(el);
             scrollRefs[i].current = el;
             // console.log('el',el);  각 요소가 찍힘
-          }} key={section.id}>{section.component}</div>
+          }} key={section.id}>{i===0?<Start aboutRef={scrollRefs[1]}/>:section.component}</div>
         )
       })}
       <Footer/>

@@ -113,7 +113,7 @@ const Projects = () => {
           variants={container}
           initial='hidden'
           whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.1 }}
         >
           {projectList.map((item,i)=>(
             <ProjectCard item={item} index={i}
@@ -121,9 +121,6 @@ const Projects = () => {
           ))}
 
         </motion.div>
-        
-
-        
 
       </div>
 

@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { HiArrowCircleDown } from "react-icons/hi";
 
 
-const Start = () => {
+const Start = ({aboutRef}) => {
     const [typingKey, setTypingKey] = useState(0);
     const [typingIsFinished, setTypingIsFinished] = useState(false);
     const prevScrollY = useRef(0);      // 이전 스크롤 위치 저장용
@@ -30,13 +30,18 @@ const Start = () => {
     };
 
     // 화살표 아이콘 클릭시 About me 까지 스크롤 내리기
-    const scrollDown = ()=>{
-        window.scrollTo({
-            top: window.innerHeight * 0.7,
-            behavior:"smooth"
-        })
-    }
+    // const scrollDown = ()=>{
+    //     window.scrollTo({
+    //         top: window.innerHeight * 0.7,
+    //         behavior:"smooth"
+    //     })
+    // }
     
+    const scrollDown = (ref)=>{
+        ref.current?.scrollIntoView({behavior:'smooth'})
+        console.log('이동')
+    }
+
   return (
     <div className='start-section'>
         <div className={`typed-container ${typingIsFinished? 'shrink':''}`}>
@@ -44,7 +49,7 @@ const Start = () => {
                 <ReactTyped
                 key={typingKey}
                     strings={[
-                    `&lt; 안녕하세요 : ) 프론트엔드 개발자 노재희 입니다.<br>
+                    `&lt; 안녕하세요 : )<br> 프론트엔드 개발자<br>노재희 입니다.<br>
                     실용적이고 감각적인 웹을 지향합니다 /&gt;`,
                     ]}
                     typeSpeed={80}
@@ -56,7 +61,7 @@ const Start = () => {
         { typingIsFinished && 
         <div className='portfolio-title'>
             <div className='portfolio-main-title'>JAEHEE's PORTFOLIO</div>
-            <HiArrowCircleDown className='arrow-icon'  onClick={scrollDown}/>
+            <HiArrowCircleDown className='arrow-icon'  onClick={()=>scrollDown(aboutRef)}/>
             <div className='swipe-text bounce-blink'>swipe</div>
         </div>}
     </div>
