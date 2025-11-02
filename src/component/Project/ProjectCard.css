@@ -104,3 +104,21 @@
 .detail-area li{
     list-style-type: none;
 }
+
+
+@media (max-width: 480px){
+    .card-wrapper{
+        width: 390px;
+        padding: 30px;
+    }
+    .card-img{
+        width: 120px;
+    }
+    .title-part{
+        /* width: 190px; */
+    }
+    .button-area{
+        display: flex;
+        flex-direction: row;
+    }
+}

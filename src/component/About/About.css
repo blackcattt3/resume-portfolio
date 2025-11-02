@@ -36,3 +36,9 @@
 .link-style:hover{
     color: gray;
 }
+
+@media (max-width: 480px){
+    .info{
+        width: 380px;
+    }
+}
