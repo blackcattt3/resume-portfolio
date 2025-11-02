@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './Header.css'
 
-const Header = ({scrollRefs}) => {
+const Header = ({scrollRefs, activeIndex}) => {
 
     const menu = ['Start', 'About', 'Skills', 'Projects']
     // console.log('scrollRefs', scrollRefs);
@@ -17,7 +17,8 @@ const Header = ({scrollRefs}) => {
         <div className='header-menu'>
             {menu.map((item, i)=>{
                 return (<div key={i}
-                    onClick={()=>goToMenu(scrollRefs[i])}>{item}</div>)
+                    onClick={()=>goToMenu(scrollRefs[i])}
+                    className={activeIndex==i? "active":""}>{item}</div>)
             })}
             {/* <div>Start</div>
             <div>|</div>

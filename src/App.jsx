@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className='app' style={{ backgroundColor: bgColor}}>
-      <Header scrollRefs={scrollRefs}/>
+      <Header scrollRefs={scrollRefs} activeIndex={activeIndex}/>
       {sections.map((section, i)=>{
         const [viewRef] = viewRefs[i];
         // 구조분해 할당
