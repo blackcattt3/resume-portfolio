@@ -4,7 +4,7 @@ import './Header.css'
 const Header = ({scrollRefs, activeIndex}) => {
 
     const menu = ['Start', 'About', 'Skills', 'Projects']
-    // console.log('scrollRefs', scrollRefs);
+    console.log('scrollRefs', scrollRefs);
 
     const goToMenu = (ref)=>{
         // const [ref] = refs[i];

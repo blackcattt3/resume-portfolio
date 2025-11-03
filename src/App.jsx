@@ -26,9 +26,10 @@ function App() {
   // console.log('scrollRefs', scrollRefs)
   // 배경색 바꾸기용 ref
   const viewRefs = sections.map(()=>useInView({threshold:0.3}))
-
+  // console.log('viewRefs', viewRefs)
   useEffect(()=>{
     const index = viewRefs.findIndex(([_, inView])=>{return inView == true});
+    // 현재 있는 페이지 인덱스 찾기
     if(index !== -1){
       setActiveIndex(index);
     }
@@ -51,12 +52,14 @@ function App() {
       <Header scrollRefs={scrollRefs} activeIndex={activeIndex}/>
       {sections.map((section, i)=>{
         const [viewRef] = viewRefs[i];
+        // console.log('viewRef', viewRef)
         // 구조분해 할당
         return (
           <div ref={(el)=>{
             viewRef(el);
             scrollRefs[i].current = el;
-            // console.log('el',el);  각 요소가 찍힘
+            console.log('el',el);
+            // 각 요소가 찍힘
           }} key={section.id}>{i===0?<Start aboutRef={scrollRefs[1]}/>:section.component}</div>
         )
       })}
