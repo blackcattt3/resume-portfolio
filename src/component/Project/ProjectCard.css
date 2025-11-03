@@ -121,9 +121,6 @@
     .card-img{
         width: 120px;
     }
-    .title-part{
-        /* width: 190px; */
-    }
     .button-area{
         display: flex;
         flex-direction: row;
