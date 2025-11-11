@@ -84,7 +84,6 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 <br>
 <br>
 <h3>🛠 사용 기술</h3>
-
 ✅ Frontend: React (Hooks: useState, useEffect, useRef, useInView)<br>
 ✅ Animation: Framer Motion, React Typed<br>
 ✅ Observer: react-intersection-observer<br>
@@ -94,6 +93,7 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 ✅ Deployment: Vercel<br>
 <br>
 <br>
+<h3>☄️ TroubleShooting</h3>
 1.🧩 TroubleShooting — ScrollY 기반 배경색 전환 오류
 문제 상황
 
