@@ -27,24 +27,24 @@
 <br>
 <h2>section별 소개</h2>
 <h3>🎬 Start Section</h3>
-<b>📁 폴더 구조</b>
+<b>📁 폴더 구조</b><br>
 📂 component/Start/<br>
  ┣ 📜 Header.jsx<br>
  ┣ 📜 Header.css<br>
 <br>
-📄 섹션 소개<br>
+<b>📄 섹션 소개</b><br>
 사이트의 첫 인트로 섹션으로, 방문자가 가장 먼저 접하게 되는 영역입니다.<br>
 React-Typed로 구현된 타이핑 애니메이션을 통해 포트폴리오의 주제를 시각적으로 전달합니다.<br>
 Header 컴포넌트는 상단 고정 네비게이션 역할을 하며, 클릭 시 해당 섹션으로 부드럽게 스크롤 이동합니다.<br>
 useRef와 scrollIntoView를 조합해 자연스러운 스크롤 네비게이션을 구현했습니다.<br>
 <br>
-<h3>👋 About Me</h3>
-📁 폴더 구조<br>
+<h3>👋 About Me Section</h3>
+<b>📁 폴더 구조</b><br>
 📂 component/About/<br>
  ┣ 📜 About.jsx<br>
  ┗ 📜 About.css<br>
 <br>
-📄 섹션 소개<br>
+<b>📄 섹션 소개</b><br>
 React로 구현한 개인 소개 페이지입니다.<br>
 자기소개, 기술 스택, 프로젝트 목록 등을 시각적으로 정리하여 포트폴리오 사이트의 중심이 되는 섹션입니다.<br>
 부드러운 스크롤 인터랙션과 통일된 컬러 컨셉을 통해 전체 사이트의 아이덴티티를 표현했습니다.<br>
@@ -55,12 +55,12 @@ Framer Motion을 통해 스크롤 진입 시 페이드 업 애니메이션이 �
 이를 통해 감지 정확도와 애니메이션 타이밍을 세밀하게 제어했습니다.<br>
 <br>
 <h3>🧩 Skills Section</h3>
-📁 폴더 구조<br>
+<b>📁 폴더 구조</b><br>
 📂 component/Skills/<br>
  ┣ 📜 Skills.jsx<br>
  ┗ 📜 Skills.css<br>
 <br>
-📄 섹션 소개<br>
+<b>📄 섹션 소개</b><br>
 Front-End 역량과 사용 가능한 기술 스택을 한눈에 보여주는 섹션입니다.<br>
 map() 함수를 활용하여 기술 아이콘 및 이름을 자동 렌더링하며, 컴포넌트화로 유지보수를 용이하게 했습니다.<br>
 Hover 시 scale과 opacity 전환 애니메이션을 적용해 역동적인 시각 효과를 부여했습니다.<br>
@@ -68,7 +68,7 @@ Framer Motion으로 스크롤 시 순차적 등장 효과를 연출했습니다.
 <br>
 <h3>💼 Projects Section</h3>
 <br>
-📁 폴더 구조<br>
+<b>📁 폴더 구조</b><br>
 📂 component/Project/<br>
  ┣ 📜 Projects.jsx<br>
  ┣ 📜 Projects.css<br>
@@ -77,7 +77,7 @@ Framer Motion으로 스크롤 시 순차적 등장 효과를 연출했습니다.
  ┣ 📜 ProjectModal.jsx<br>
  ┗ 📜 ProjectModal.css<br>
 <br>
-📄 섹션 소개<br>
+<b>📄 섹션 소개</b><br>
 진행했던 주요 프로젝트들을 카드 형태로 시각화한 섹션입니다.<br>
 각 카드에 Hover 효과를 주고, 클릭 시 Modal이 열리며 상세 내용(이미지, 기술스택, 링크 등)을 표시합니다.<br>
 외부 영역 클릭 시 모달이 닫히도록 stopPropagation과 useEffect를 활용한 이벤트 제어 로직을 구현했습니다.<br>
