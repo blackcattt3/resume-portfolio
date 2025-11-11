@@ -100,8 +100,6 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 ✓ map을 통한 반복 렌더링 시 각 요소별 useInView 훅을 개별 호출해야 함을 학습했다.<br>
 ✓ addEventListener/removeEventListener의 cleanup 메커니즘을 이해하며 메모리 누수 방지를 실무 감각으로 익혔다.<br>
 ✓ 부모 요소의 높이값이 명시되지 않으면 height: 100%가 적용되지 않는 CSS의 레이아웃 구조 원리를 체득했다.<br>
-
-<br>
 <br>
 <br>
 1.🧩 TroubleShooting — ScrollY 기반 배경색 전환 오류
