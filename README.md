@@ -94,14 +94,6 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 ✅ Deployment: Vercel<br>
 <br>
 <br>
-<h3>✍️ 회고</h3>
-✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
-✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
-✓ map을 통한 반복 렌더링 시 각 요소별 useInView 훅을 개별 호출해야 함을 학습했다.<br>
-✓ addEventListener/removeEventListener의 cleanup 메커니즘을 이해하며 메모리 누수 방지를 실무 감각으로 익혔다.<br>
-✓ 부모 요소의 높이값이 명시되지 않으면 height: 100%가 적용되지 않는 CSS의 레이아웃 구조 원리를 체득했다.<br>
-<br>
-<br>
 1.🧩 TroubleShooting — ScrollY 기반 배경색 전환 오류
 문제 상황
 
@@ -125,3 +117,11 @@ Start 섹션이 보이면 setBgColor('black'), 안 보이면 setBgColor('white')
 구조 변화나 해상도 변화에 약하다.
 반면 react-intersection-observer는 요소의 실제 가시 여부를 감지하기 때문에
 유지보수성과 정확도가 훨씬 높다.”
+<br>
+<br>
+<h3>✍️ 회고</h3>
+✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
+✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
+✓ map을 통한 반복 렌더링 시 각 요소별 useInView 훅을 개별 호출해야 함을 학습했다.<br>
+✓ addEventListener/removeEventListener의 cleanup 메커니즘을 이해하며 메모리 누수 방지를 실무 감각으로 익혔다.<br>
+✓ 부모 요소의 높이값이 명시되지 않으면 height: 100%가 적용되지 않는 CSS의 레이아웃 구조 원리를 체득했다.<br>
