@@ -9,7 +9,7 @@ import { text } from '../../animations/animationVariants';
 import {motion} from 'framer-motion'
 
 const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject}) => {
-  const { title, subtitle, content, skills, projectImg, github, demo } = item
+  const { title, subtitle, content, troubleShooting, skills, projectImg, github, demo } = item
   const [detailOpen, setDetailOpen] = useState(false);
   // useEffect(()=>{
   //   console.log(activeProject)
@@ -36,11 +36,29 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
               <div className='git-btn' onClick={() => window.open(github)}>Git Repo</div>
             </div>
 
-            {detailOpen && <ul className='detail-area'>
-              {content.map((el)=>(
-                <li>⭐️  {el}</li>
-              ))}
-            </ul>}
+            <div className='detail-btn' onClick={()=>setDetailOpen(!detailOpen)}>
+          {detailOpen?<><CiCircleMinus/>Close Details</>:<><CiCirclePlus />More Details</>}</div>
+            
+            {detailOpen && 
+              <div className='detail-section'>
+                <div className='main-function-area'>
+                  <div style={{fontWeight:600}}>⭐️ Main function</div>
+                  <ul className='detail-area'>
+                    {content.map((el)=>(
+                      <li>{el}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className='trouble-shooting-area'>
+                  <div style={{fontWeight:600}}>⚙️ Trouble Shooting</div>
+                  <ul className='detail-area'>
+                    {troubleShooting.map((el)=>(
+                      <li>{el}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            }
       
           </div>
 
@@ -49,8 +67,8 @@ const ProjectCard = ({item, i, delayBase, duration, onDetailClick, activeProject
           </div>
         </div>
 
-        <div className='detail-btn' onClick={()=>setDetailOpen(!detailOpen)}>
-          {detailOpen?<><CiCirclePlus/>Close Details</>:<><CiCircleMinus />More Details</>}</div>
+        {/* <div className='detail-btn' onClick={()=>setDetailOpen(!detailOpen)}>
+          {detailOpen?<><CiCircleMinus/>Close Details</>:<><CiCirclePlus />More Details</>}</div> */}
   
     </motion.div>
 

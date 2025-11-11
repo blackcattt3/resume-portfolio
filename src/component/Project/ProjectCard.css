@@ -19,9 +19,7 @@
     justify-content: space-between;
     /* align-items: stretch; */
     align-items: flex-start;
-    
-
-    
+        
 }
 .content{
     display: flex;
@@ -29,19 +27,22 @@
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
     /* max-width: 190px; */
     /* flex-wrap: wrap; */
 }
 .img-part{
-    /* height: 100%; */
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    flex-shrink: 0;
 }
 .card-img{
     width: 150px;
     object-fit: cover;
     border-radius: 20px;
-    border: 2px solid gray;
+    border: 1px solid gray;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
 }
 .card-img:hover{
     cursor:pointer;
@@ -89,6 +90,7 @@
     transform: scale(1.05);
 }
 .detail-btn{
+    color: rgb(109, 108, 108);
     font-size: 15px;
     text-align: center;
     display: flex;
@@ -97,19 +99,29 @@
     gap: 3px;
     transform-origin: left center; /* ← 핵심! */
 }
+.detail-btn svg {
+  position: relative;
+  top: -1px; /* ↓ 또는 -1px 로 미세 조정 */
+}
 .detail-btn:hover{
     cursor: pointer;
     color: #8b8a8a;
     transform: scale(1.05);
 }
 .detail-area{
-    padding: 10px 0px;
+    padding: 2px 0px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 2px;
 }
 .detail-area li{
-    list-style-type: none;
+    /* list-style-type: none; */
+    font-size: 14px;
+    /* white-space: nowrap; */
+}
+.main-function-area,
+.trouble-shooting-area{
+    padding: 10px;
 }
 
 

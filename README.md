@@ -17,8 +17,6 @@ React로 구현한 개인 소개 페이지입니다.<br>
 ┃ ┗ 📜 About.css<br>
 
 <h3>🧩 주요 기능</h3>
-✅ 주요 소개 문구를 `<div>` 단위로 구성하여 반응형으로 재배치<br> ✅ Flexbox와 margin·padding으로 자연스러운 공간감 유지<br>
-✅ 고정 높이(min-height) 설정을 통해 화면 크기와 무관하게 안정된 배치 유지<br>
 
 <h3>🛠 사용 기술</h3>
 ✅ React (Functional Component)<br>
@@ -28,10 +26,10 @@ React로 구현한 개인 소개 페이지입니다.<br>
 <h2>🧩 Skills</h2>
 <h3>📌 프로젝트 소개</h3>
 React와 CSS를 활용해 기술 스택을 시각화한 섹션입니다.<br>
-각 카드가 다른 색상 테마로 표시되어 카테고리별 구분이 쉽게 되며, 애니메이션 없는 깔끔한 구성을 지향했습니다.<h3>📂 폴더 구조</h3> 📦 src/<br> ┣ 📂 components<br> ┃ ┣ 📜 Skills.jsx<br> ┃ ┗ 📜 Skills.css<br> <h3>🧩 주요 기능</h3> ✅ `map()`을 이용한 반복 렌더링으로 skill 리스트 자동 생성<br> ✅ 짝수/홀수 index 구분(`index % 2`)을 활용해 테두리 및 타이틀 위치를 다르게 표현<br> ✅ CSS에서 `box-shadow`와 `rotate`를 이용한 카드형 디자인 구현<br> ✅ `min-height: 100vh`로 화면 중앙 정렬 유지<br> <h3>🛠 사용 기술</h3> ✅ Frontend: React (Vite)<br> ✅ Language: JavaScript (ES6+)<br> ✅ Styling: CSS3 (Flexbox, Shadow, Border Animation)<br> <h3>✍️ 회고</h3> ✓ 단순 나열이 아닌 “정보 시각화” 중심의 구성 방식을 배웠다.<br> ✓ JSX 내에서 index 기반 조건부 클래스 제어를 활용할 수 있게 되었다.<br>
+<h3>📂 폴더 구조</h3> 📦 src/<br> ┣ 📂 components<br> ┃ ┣ 📜 Skills.jsx<br> ┃ ┗ 📜 Skills.css<br> <h3>🧩 주요 기능</h3> ✅ `map()`을 이용한 반복 렌더링으로 skill 리스트 자동 생성<br> ✅ 짝수/홀수 index 구분(`index % 2`)을 활용해 테두리 및 타이틀 위치를 다르게 표현<br> ✅ CSS에서 `box-shadow`와 `rotate`를 이용한 카드형 디자인 구현<br> ✅ `min-height: 100vh`로 화면 중앙 정렬 유지<br> <h3>🛠 사용 기술</h3> ✅ Frontend: React (Vite)<br> ✅ Language: JavaScript (ES6+)<br> ✅ Styling: CSS3 (Flexbox, Shadow, Border Animation)<br> <h3>✍️ 회고</h3> ✓ 단순 나열이 아닌 “정보 시각화” 중심의 구성 방식을 배웠다.<br> ✓ JSX 내에서 index 기반 조건부 클래스 제어를 활용할 수 있게 되었다.<br>
 🧱 Projects / ProjectCard / ProjectModal 섹션
 <h2>💼 Projects</h2> <h3>📌 프로젝트 소개</h3> 프로젝트 목록을 카드 형태로 보여주는 섹션입니다.<br> 각 프로젝트 카드 클릭 시 상세 모달(ProjectModal)이 등장하여 프로젝트 내용, 기술 스택, 링크 등을 표시합니다.<br> 이 페이지는 포트폴리오 사이트의 핵심으로, 사용자가 개발자의 전체 작업물을 한눈에 볼 수 있도록 구성되었습니다.<br> <h3>📂 폴더 구조</h3> 📦 src/<br> ┣ 📂 components<br> ┃ ┣ 📜 Projects.jsx<br> ┃ ┣ 📜 Projects.css<br> ┃ ┣ 📜 ProjectCard.jsx<br> ┃ ┣ 📜 ProjectCard.css<br> ┃ ┣ 📜 ProjectModal.jsx<br> ┃ ┗ 📜 ProjectModal.css<br> <h3>🧩 주요 기능</h3> ✅ `ProjectCard` 컴포넌트에서 props를 받아 프로젝트 정보를 렌더링<br> ✅ `onClick` 이벤트로 `ProjectModal` 열림/닫힘 제어<br> ✅ `framer-motion` 없이 CSS transition으로 자연스러운 모달 애니메이션 구현<br> ✅ 반응형 디자인으로 화면 크기에 따라 카드 수가 유연하게 변경<br> ✅ Modal 오버레이 클릭 시 외부 클릭 감지(`e.target === e.currentTarget`)로 닫기 구현<br> <h3>🛠 사용 기술</h3> ✅ React (Functional Component + Props)<br> ✅ CSS3 (Flexbox, Transition, Overlay Layer)<br> ✅ 상태 관리: useState<br> <h3>✍️ 회고</h3> ✓ 컴포넌트 간 데이터 전달(props) 흐름을 완전히 이해하게 되었다.<br> ✓ 모달의 “외부 클릭 닫기” 로직을 통해 이벤트 버블링/캡처링 개념을 실전 적용했다.<br> ✓ 컴포넌트 간 역할 분리의 중요성을 체감했다. (Projects → ProjectCard → ProjectModal)<br>
-
+✓ Google Analytics 연동 및 내부 트래픽(IP) 필터링 적용으로 실제 사용자 데이터만 분석하도록 구성
 
 
 

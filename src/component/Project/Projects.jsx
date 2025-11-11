@@ -30,9 +30,12 @@ const Projects = () => {
       skills : ['HTML5', 'CSS3', 'Bootstrap'],
       content : [
         'HTML, CSS 기반의 반응형 쇼핑몰 페이지',
-        '부트스트랩을 이용한 반응형 웹페이지',
         '브랜드 콘셉트(J.nail)의 시각적 아이덴티티를 강조한 UI/UX 디자인',
         '기초 웹 구조를 익히며 웹 프론트엔드의 기초를 다짐'
+      ],
+      troubleShooting : [
+        '반응형 깨짐 이슈 해결(flexbox 구조 재정비',
+        '이미지 로드 속도 개선 (lazy loading 적용)'
       ],
       demo : 'https://jnail.netlify.app/',
       github : 'https://github.com/blackcattt3/J.nail-website',
@@ -44,10 +47,12 @@ const Projects = () => {
       skills: ["React", "JavaScript(ES6+)", "API"],
       content : [
         "OpenWeather API를 이용해 도시별 실시간 날씨 데이터 요청 및 표시",
-        "useState, useEffect 훅을 활용한 비동기 데이터 렌더링",
-        "날씨 상태(맑음, 흐림, 비 등)에 따라 배경 이미지와 테마 동적으로 변경",
+        "React Hooks를 활용한 비동기 상태관리",
         "react-spinners 라이브러리를 이용한 로딩스피너 구현",
-        "배포 시 환경변수(.env) 관리 및 Netlify 환경변수 설정을 통해 API Key 보안 처리"
+      ],
+      troubleShooting : [
+        'API key 노출 이슈 → .env 및 Netlify 환경변수로 보안 처리',
+        '날씨가 한눈에 안들어오는 점을 고려하여 날씨 코드별 조건부 렌더링을 통해 아이콘 표시 및 배경화면 설정'
       ],
       demo : 'https://mini-weathers.netlify.app/',
       github : 'https://github.com/blackcattt3/weather_app_project',
@@ -55,13 +60,15 @@ const Projects = () => {
     },
     {
       title : '가위 바위 보!',
-      subtitle : 'React 훅 기반 가위바위보 게임',
+      subtitle : 'React 상태관리 기반 가위바위보 게임',
       skills: ["React", "useState", "useEffect", "CSS3"],
       content : [
-        "useState, useEffect를 활용해 유저와 컴퓨터의 선택 상태 관리",
-        "조건문과 랜덤 함수를 이용한 게임 로직 구현",
+        "React Hook(useState, useEffect)을 활용해 유저와 컴퓨터의 선택 상태 관리",
         "점수판, 결과 메세지, 리셋 버튼 등 인터랙티브 UI 구성",
         "게임 로직 설계 과정을 통해 React 상태관리의 이해 심화"
+      ],
+      troubleShooting : [
+        'setUserScore(userScore + 1) 비동기 업데이트 문제 →<br> setUserScore(prev => prev + 1)로 해결하며 상태 참조 개념 학습'
       ],
       demo : 'https://my-rsp-game.netlify.app/',
       github : 'https://github.com/blackcattt3/rock-scissors-paper-game',
@@ -72,12 +79,14 @@ const Projects = () => {
       subtitle : 'React 기반 나의 이력서 포트폴리오',
       skills: ["React", "useState", "useEffect", "CSS3"],
       content : [
-        "프로젝트 목록을 카드 형태로 구성하고 map을 활용한 동적 렌더링",
-        "'More Details' 토글 버튼으로 상세 설명 펼치기/접기 기능 구현",
-        "이미지 클릭 시 모달 오픈 및 프로젝트 이미지 슬라이더 구현",
-        "모달 외부 클릭 시 닫기 기능 — 이벤트 버블링 제어(stopPropagation)",
+        "Intersection Observer & Framer Motion으로 스크롤 인터랙션 구현",
         "컴포넌트 단위 UI 설계 경험 및 재사용 가능한 카드 컴포넌트 구현",
-        "Transform-origin을 활용해 자연스러운 애니메이션 효과 구현"
+        "모달 외부 클릭 시 닫기 기능 — 이벤트 버블링 제어(stopPropagation)"
+      ],
+      troubleShooting : [
+        '이벤트 리스너 중복 등록 → removeEventListener로 메모리 누수 방지',
+        'useInView ref 공유 문제 해결 → map 내부에서 개별 ref 생성',
+        'threshold 조정 및 margin 보정으로 트리거 타이밍 정확도 개선'
       ],
       demo : 'https://jaehee-portfolio.vercel.app/',
       github : 'https://github.com/blackcattt3/resume-portfolio',
