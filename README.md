@@ -2,7 +2,6 @@
 <br>
 ↓페이지 바로가기↓
 <h2>https://jaehee-portfolio.vercel.app/</h2>
-<br>
 <h3>📌 프로젝트 소개</h3>
 기획 → 디자인 → 개발 전 과정을 직접 수행한 개인 포트폴리오 웹사이트입니다.<br>
 스크롤 기반 섹션 전환과 Framer Motion 애니메이션을 활용하여 부드러운 사용자 경험과 인터랙션 중심 UI를 구현했습니다.<br>
@@ -24,27 +23,82 @@
   ┣ 📜 App.jsx<br>
   ┣ 📜 App.css<br>
   ┗ 📜 main.jsx<br>
+<br>
+<h2>section별 소개</h2>
+<br> <h3>🎬 Start Section</h3>
+📁 폴더 구조<br>
+📂 component/Start/<br>
+ ┣ 📜 Header.jsx<br>
+ ┣ 📜 Header.css<br>
 
-<h2>section 소개</h2>
-<h3>👋 About Me</h3><br>
+📄 섹션 소개<br>
+사이트의 첫 인트로 섹션으로, 방문자가 가장 먼저 접하게 되는 영역입니다.<br>
+React-Typed로 구현된 타이핑 애니메이션을 통해 포트폴리오의 주제를 시각적으로 전달합니다.<br>
+Header 컴포넌트는 상단 고정 네비게이션 역할을 하며, 클릭 시 해당 섹션으로 부드럽게 스크롤 이동합니다.<br>
+useRef와 scrollIntoView를 조합해 자연스러운 스크롤 네비게이션을 구현했습니다.<br>
+<h3>👋 About Me</h3>
+📁 폴더 구조<br>
+📂 component/About/<br>
+ ┣ 📜 About.jsx<br>
+ ┗ 📜 About.css<br>
+<br>
+📄 섹션 소개<br>
 React로 구현한 개인 소개 페이지입니다.<br>
 자기소개, 기술 스택, 프로젝트 목록 등을 시각적으로 정리하여 포트폴리오 사이트의 중심이 되는 섹션입니다.<br>
 부드러운 스크롤 인터랙션과 통일된 컬러 컨셉을 통해 전체 사이트의 아이덴티티를 표현했습니다.<br>
-
-<h3>🧩 주요 기능</h3>
-
+<br>
+자기소개, 가치관, 개발자로서의 방향성을 담은 섹션입니다.<br>
+Framer Motion을 통해 스크롤 진입 시 페이드 업 애니메이션이 자연스럽게 나타나도록 설정했습니다.<br>
+섹션 높이가 짧아 Intersection Observer의 감지 범위가 제한되는 이슈를 해결하기 위해 threshold 값과 rootMargin을 조정했습니다.<br>
+이를 통해 감지 정확도와 애니메이션 타이밍을 세밀하게 제어했습니다.<br>
+<br>
+<h3>🧩 Skills Section</h3>
+📁 폴더 구조<br>
+📂 component/Skills/<br>
+ ┣ 📜 Skills.jsx<br>
+ ┗ 📜 Skills.css<br>
+<br>
+📄 섹션 소개<br>
+Front-End 역량과 사용 가능한 기술 스택을 한눈에 보여주는 섹션입니다.<br>
+map() 함수를 활용하여 기술 아이콘 및 이름을 자동 렌더링하며, 컴포넌트화로 유지보수를 용이하게 했습니다.<br>
+Hover 시 scale과 opacity 전환 애니메이션을 적용해 역동적인 시각 효과를 부여했습니다.<br>
+Framer Motion으로 스크롤 시 순차적 등장 효과를 연출했습니다.<br>
+<br>
+<h3>💼 Projects Section</h3>
+<br>
+📁 폴더 구조<br>
+📂 component/Project/<br>
+ ┣ 📜 Projects.jsx<br>
+ ┣ 📜 Projects.css<br>
+ ┣ 📜 ProjectCard.jsx<br>
+ ┣ 📜 ProjectCard.css<br>
+ ┣ 📜 ProjectModal.jsx<br>
+ ┗ 📜 ProjectModal.css<br>
+<br>
+📄 섹션 소개<br>
+진행했던 주요 프로젝트들을 카드 형태로 시각화한 섹션입니다.<br>
+각 카드에 Hover 효과를 주고, 클릭 시 Modal이 열리며 상세 내용(이미지, 기술스택, 링크 등)을 표시합니다.<br>
+외부 영역 클릭 시 모달이 닫히도록 stopPropagation과 useEffect를 활용한 이벤트 제어 로직을 구현했습니다.<br>
+react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메이션을 적용하여, 사용자가 스크롤을 내릴 때 부드럽게 콘텐츠가 나타납니다.<br>
+<br>
+<br>
 <h3>🛠 사용 기술</h3>
-✅ React (Functional Component)<br>
-✅ CSS3 (Flexbox, 반응형 단위 rem/em 활용)<br>
 
-💡 Skills 섹션
-<h2>🧩 Skills</h2>
-<h3>📌 프로젝트 소개</h3>
-React와 CSS를 활용해 기술 스택을 시각화한 섹션입니다.<br>
-<h3>📂 폴더 구조</h3> 📦 src/<br> ┣ 📂 components<br> ┃ ┣ 📜 Skills.jsx<br> ┃ ┗ 📜 Skills.css<br> <h3>🧩 주요 기능</h3> ✅ `map()`을 이용한 반복 렌더링으로 skill 리스트 자동 생성<br> ✅ 짝수/홀수 index 구분(`index % 2`)을 활용해 테두리 및 타이틀 위치를 다르게 표현<br> ✅ CSS에서 `box-shadow`와 `rotate`를 이용한 카드형 디자인 구현<br> ✅ `min-height: 100vh`로 화면 중앙 정렬 유지<br> <h3>🛠 사용 기술</h3> ✅ Frontend: React (Vite)<br> ✅ Language: JavaScript (ES6+)<br> ✅ Styling: CSS3 (Flexbox, Shadow, Border Animation)<br> <h3>✍️ 회고</h3> ✓ 단순 나열이 아닌 “정보 시각화” 중심의 구성 방식을 배웠다.<br> ✓ JSX 내에서 index 기반 조건부 클래스 제어를 활용할 수 있게 되었다.<br>
-🧱 Projects / ProjectCard / ProjectModal 섹션
-<h2>💼 Projects</h2> <h3>📌 프로젝트 소개</h3> 프로젝트 목록을 카드 형태로 보여주는 섹션입니다.<br> 각 프로젝트 카드 클릭 시 상세 모달(ProjectModal)이 등장하여 프로젝트 내용, 기술 스택, 링크 등을 표시합니다.<br> 이 페이지는 포트폴리오 사이트의 핵심으로, 사용자가 개발자의 전체 작업물을 한눈에 볼 수 있도록 구성되었습니다.<br> <h3>📂 폴더 구조</h3> 📦 src/<br> ┣ 📂 components<br> ┃ ┣ 📜 Projects.jsx<br> ┃ ┣ 📜 Projects.css<br> ┃ ┣ 📜 ProjectCard.jsx<br> ┃ ┣ 📜 ProjectCard.css<br> ┃ ┣ 📜 ProjectModal.jsx<br> ┃ ┗ 📜 ProjectModal.css<br> <h3>🧩 주요 기능</h3> ✅ `ProjectCard` 컴포넌트에서 props를 받아 프로젝트 정보를 렌더링<br> ✅ `onClick` 이벤트로 `ProjectModal` 열림/닫힘 제어<br> ✅ `framer-motion` 없이 CSS transition으로 자연스러운 모달 애니메이션 구현<br> ✅ 반응형 디자인으로 화면 크기에 따라 카드 수가 유연하게 변경<br> ✅ Modal 오버레이 클릭 시 외부 클릭 감지(`e.target === e.currentTarget`)로 닫기 구현<br> <h3>🛠 사용 기술</h3> ✅ React (Functional Component + Props)<br> ✅ CSS3 (Flexbox, Transition, Overlay Layer)<br> ✅ 상태 관리: useState<br> <h3>✍️ 회고</h3> ✓ 컴포넌트 간 데이터 전달(props) 흐름을 완전히 이해하게 되었다.<br> ✓ 모달의 “외부 클릭 닫기” 로직을 통해 이벤트 버블링/캡처링 개념을 실전 적용했다.<br> ✓ 컴포넌트 간 역할 분리의 중요성을 체감했다. (Projects → ProjectCard → ProjectModal)<br>
-✓ Google Analytics 연동 및 내부 트래픽(IP) 필터링 적용으로 실제 사용자 데이터만 분석하도록 구성
+✅ Frontend: React (Hooks: useState, useEffect, useRef, useInView)<br>
+✅ Animation: Framer Motion, React Typed<br>
+✅ Observer: react-intersection-observer<br>
+✅ Language: JavaScript (ES6+)<br>
+✅ Styling: CSS3 (Flexbox, MediaQuery, Transform)<br>
+✅ Icons: React Icons<br>
+✅ Deployment: Vercel<br>
+<br>
+<h3>✍️ 회고</h3>
+✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
+✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
+✓ map을 통한 반복 렌더링 시 각 요소별 useInView 훅을 개별 호출해야 함을 학습했다.<br>
+✓ addEventListener/removeEventListener의 cleanup 메커니즘을 이해하며 메모리 누수 방지를 실무 감각으로 익혔다.<br>
+✓ 부모 요소의 높이값이 명시되지 않으면 height: 100%가 적용되지 않는 CSS의 레이아웃 구조 원리를 체득했다.<br>
+
 
 
 
