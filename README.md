@@ -25,7 +25,7 @@
   ┗ 📜 main.jsx<br>
 <br>
 <br>
-<h2>section별 소개</h2>
+<b>section별 소개</ㅠ>
 <h3>🎬 Start Section</h3>
 <h5>📁 폴더 구조</h5>
 📂 component/Start/<br>
