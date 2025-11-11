@@ -67,7 +67,6 @@ Hover 시 scale과 opacity 전환 애니메이션을 적용해 역동적인 시�
 Framer Motion으로 스크롤 시 순차적 등장 효과를 연출했습니다.<br>
 <br>
 <h3>💼 Projects Section</h3>
-<br>
 <b>📁 폴더 구조</b><br>
 📂 component/Project/<br>
  ┣ 📜 Projects.jsx<br>
@@ -94,6 +93,7 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 ✅ Icons: React Icons<br>
 ✅ Deployment: Vercel<br>
 <br>
+<br>
 <h3>✍️ 회고</h3>
 ✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
 ✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
@@ -101,9 +101,9 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 ✓ addEventListener/removeEventListener의 cleanup 메커니즘을 이해하며 메모리 누수 방지를 실무 감각으로 익혔다.<br>
 ✓ 부모 요소의 높이값이 명시되지 않으면 height: 100%가 적용되지 않는 CSS의 레이아웃 구조 원리를 체득했다.<br>
 
-
-
-
+<br>
+<br>
+<br>
 1.🧩 TroubleShooting — ScrollY 기반 배경색 전환 오류
 문제 상황
 
