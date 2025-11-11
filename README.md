@@ -94,31 +94,45 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 <br>
 <br>
 <h3>☄️ TroubleShooting</h3>
-1.🧩 TroubleShooting — ScrollY 기반 배경색 전환 오류
-문제 상황
+<h4>1. ScrollY 기반 배경색 전환 오류</h4>
+<b>문제 상황</b><br>
+첫 번째 섹션(Start)에서만 배경이 검정, 이후 섹션(About, Project 등)은 흰색으로 바꾸는 로직을 window.scrollY 기준으로 구현했음.<b>
+하지만 GitHub/Velog 링크를 클릭했다가 돌아오거나, 화면 크기가 달라질 때 색상 상태가 어긋나는 문제가 발생.<br>
+<br>
+<b>원인 분석</b><br>
+scrollY는 화면 위치(px) 를 기준으로 계산되기 때문에, 브라우저 복귀 시 기억된 스크롤 위치가 미묘하게 달라지면 조건이 틀어지는 문제가 있었다.<br>
+페이지 길이나 섹션 개수가 바뀌면 기준 비율(window.innerHeight * 0.9)도 매번 수정해야 함.<br>
+사용자 화면 크기(해상도)에 따라 스크롤 비율 계산이 달라져, 의도와 다른 시점에 색이 바뀔 수 있음.<br>
+<br>
+<b>해결 방법</b>
+react-intersection-observer로 전환 → “요소가 화면에 들어왔는가?” 기준으로 판단.<br>
+Start 섹션이 보이면 setBgColor('black'), 안 보이면 setBgColor('white') 로 처리하면 섹션 수나 길이 변경, 화면 크기, 브라우저 복귀 등의 영향을 받지 않음.<br>
 
-첫 번째 섹션(Start)에서만 배경이 검정, 이후 섹션(About, Project 등)은 흰색으로 바꾸는 로직을 window.scrollY 기준으로 구현했음.
-하지만 GitHub/Velog 링크를 클릭했다가 돌아오거나, 화면 크기가 달라질 때 색상 상태가 어긋나는 문제가 발생.
-
-원인 분석
-
-scrollY는 화면 위치(px) 를 기준으로 계산되기 때문에,
-브라우저 복귀 시 기억된 스크롤 위치가 미묘하게 달라지면 조건이 틀어짐.
-페이지 길이나 섹션 개수가 바뀌면 기준 비율(window.innerHeight * 0.9)도 매번 수정해야 함.
-사용자 화면 크기(해상도)에 따라 스크롤 비율 계산이 달라져, 의도와 다른 시점에 색이 바뀔 수 있음.
-
-해결 방법
-react-intersection-observer로 전환 → “요소가 화면에 들어왔는가?” 기준으로 판단.
-Start 섹션이 보이면 setBgColor('black'), 안 보이면 setBgColor('white') 로 처리하면
-섹션 수나 길이 변경, 화면 크기, 브라우저 복귀 등의 영향을 받지 않음.
-
-결론
-“scrollY는 화면 비율에 의존하기 때문에,
-구조 변화나 해상도 변화에 약하다.
-반면 react-intersection-observer는 요소의 실제 가시 여부를 감지하기 때문에
-유지보수성과 정확도가 훨씬 높다.”
+<b>결론</b>
+scrollY는 화면 비율에 의존하기 때문에,구조 변화나 해상도 변화에 약하다.<br>
+반면 react-intersection-observer는 요소의 실제 가시 여부를 감지하기 때문에 유지보수성과 정확도가 훨씬 높다.<b>
 <br>
 <br>
+<h4>2. About 섹션 애니메이션 트리거 오류</h4>
+<b>문제 상황</b>
+About 섹션의 높이가 짧아, 스크롤 시 Intersection Observer 감지 기준(threshold)이 제대로 작동하지 않았음.<br>
+섹션이 화면에 들어와도 애니메이션이 실행되지 않거나, 너무 늦게 트리거되는 문제가 발생.<br>
+<br>
+<b>원인 분석</b>
+Framer Motion의 whileInView는 내부적으로 Intersection Observer를 사용하지만, rootMargin 속성을 직접 제어할 수 없음.<br>
+요소가 화면에 일정 비율 이상 보여야 감지되는 구조이기 때문에, 섹션이 작을 경우 threshold 값이 의미를 잃고 애니메이션 트리거 타이밍이 어긋남.<br>
+<br>
+<b>해결 방법</b>
+Framer Motion에서 제공하는 viewport.amount 옵션을 사용하여 감지 기준을 세밀하게 조정.<br>
+예를 들어 viewport={{ once: false, amount: 0.3 }}로 설정하면 요소가 30%만 화면에 보여도 애니메이션이 실행되도록 제어할 수 있음.<br>
+이를 통해 rootMargin을 직접 설정하지 않고도 감지 범위를 유연하게 다룸.<br>
+
+<b>결론</b>
+rootMargin을 직접 사용할 수 없는 환경에서는 Framer Motion의 viewport.amount 속성을 활용해 감지 시점을 조정하는 것이 효과적이다.<br>
+특히 섹션 크기가 작거나 레이아웃 변화가 잦은 페이지에서 보다 자연스러운 애니메이션 트리거를 구현할 수 있다.<br>
+
+
+
 <h3>✍️ 회고</h3>
 ✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
 ✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
