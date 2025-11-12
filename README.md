@@ -107,7 +107,6 @@ scrollY는 화면 위치(px) 를 기준으로 계산되기 때문에, 브라우�
 <b>해결 방법</b>
 react-intersection-observer로 전환 → “요소가 화면에 들어왔는가?” 기준으로 판단.<br>
 Start 섹션이 보이면 setBgColor('black'), 안 보이면 setBgColor('white') 로 처리하면 섹션 수나 길이 변경, 화면 크기, 브라우저 복귀 등의 영향을 받지 않음.<br>
-
 <b>결론</b>
 scrollY는 화면 비율에 의존하기 때문에,구조 변화나 해상도 변화에 약하다.<br>
 반면 react-intersection-observer는 요소의 실제 가시 여부를 감지하기 때문에 유지보수성과 정확도가 훨씬 높다.<b>
@@ -126,13 +125,12 @@ Framer Motion의 whileInView는 내부적으로 Intersection Observer를 사용�
 Framer Motion에서 제공하는 viewport.amount 옵션을 사용하여 감지 기준을 세밀하게 조정.<br>
 예를 들어 viewport={{ once: false, amount: 0.3 }}로 설정하면 요소가 30%만 화면에 보여도 애니메이션이 실행되도록 제어할 수 있음.<br>
 이를 통해 rootMargin을 직접 설정하지 않고도 감지 범위를 유연하게 다룸.<br>
-
+<br>
 <b>결론</b>
 rootMargin을 직접 사용할 수 없는 환경에서는 Framer Motion의 viewport.amount 속성을 활용해 감지 시점을 조정하는 것이 효과적이다.<br>
 특히 섹션 크기가 작거나 레이아웃 변화가 잦은 페이지에서 보다 자연스러운 애니메이션 트리거를 구현할 수 있다.<br>
-
-
-
+<br>
+<br>
 <h3>✍️ 회고</h3>
 ✓ Framer Motion을 활용해 애니메이션을 단순한 시각효과가 아닌 사용자 경험 중심으로 설계했다.<br>
 ✓ Header/Section/Card/Modal 단위로 컴포넌트를 분리하며 재사용성과 유지보수성의 중요성을 체감했다.<br>
