@@ -96,7 +96,7 @@ react-intersection-observer로 각 카드의 등장 시점에 Fade-In 애니메�
 <h3>☄️ TroubleShooting</h3>
 <h4>1. ScrollY 기반 배경색 전환 오류</h4>
 <b>문제 상황</b><br>
-첫 번째 섹션(Start)에서만 배경이 검정, 이후 섹션(About, Project 등)은 흰색으로 바꾸는 로직을 window.scrollY 기준으로 구현했음.<b>
+첫 번째 섹션(Start)에서만 배경이 검정, 이후 섹션(About, Project 등)은 흰색으로 바꾸는 로직을 window.scrollY 기준으로 구현했음.<br>
 하지만 GitHub/Velog 링크를 클릭했다가 돌아오거나, 화면 크기가 달라질 때 색상 상태가 어긋나는 문제가 발생.<br>
 <br>
 <b>원인 분석</b><br>
