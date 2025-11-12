@@ -108,7 +108,7 @@ scrollY는 화면 위치(px) 를 기준으로 계산되기 때문에, 브라우�
 react-intersection-observer로 전환 → “요소가 화면에 들어왔는가?” 기준으로 판단.<br>
 Start 섹션이 보이면 setBgColor('black'), 안 보이면 setBgColor('white') 로 처리하면 섹션 수나 길이 변경, 화면 크기, 브라우저 복귀 등의 영향을 받지 않음.<br>
 <br>
-<b>결론</b>
+<b>결론</b><br>
 scrollY는 화면 비율에 의존하기 때문에, 구조 변화나 해상도 변화에 약하다.<br>
 반면 react-intersection-observer는 요소의 실제 가시 여부를 감지하기 때문에 유지보수성과 정확도가 훨씬 높다.<br>
 <br>
