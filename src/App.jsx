@@ -23,7 +23,7 @@ function App() {
 
   // 스크롤용 ref
   const scrollRefs = sections.map(()=>useRef(null));
-  // console.log('scrollRefs', scrollRefs)
+  // console.log('scrollRefs[1]', scrollRefs[1])
   // 배경색 바꾸기용 ref
   const viewRefs = sections.map(()=>useInView({threshold:0.3}))
   // console.log('viewRefs', viewRefs)
@@ -61,6 +61,7 @@ function App() {
             console.log('el',el);
             // 각 요소가 찍힘
           }} key={section.id}>{i===0?<Start aboutRef={scrollRefs[1]}/>:section.component}</div>
+          // 화살표 누르면 about me section으로 넘어갈 수 있게 about 페이지의 ref 정보를 넘겨줌
         )
       })}
       <Footer/>
