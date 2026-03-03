@@ -49,7 +49,7 @@ const Start = ({aboutRef}) => {
                 <ReactTyped
                 key={typingKey}
                     strings={[
-                    `&lt; 안녕하세요 : )<br>노재희 입니다.<br>
+                    `&lt; 안녕하세요 : )<br> QA 노재희 입니다.<br>
                     실용적이고 감각적인 웹을 지향합니다 /&gt;`,
                     ]}
                     typeSpeed={80}
